@@ -1,6 +1,8 @@
 Rebound-RecyclerView-Android[![](https://jitpack.io/v/theonlyanil/Rebound-RecyclerView-Android.svg)](https://jitpack.io/#theonlyanil/Rebound-RecyclerView-Android)
 ===
 
+![](https://github.com/theonlyanil/Rebound-RecyclerView-Android/blob/master/Demo.gif)
+
 Unofficial library based on Facebook's Rebound library for Android RecyclerView. Report issues in issues tab. Special Thanks to [@anthony-skr](https://github.com/anthony-skr/RecyclerViewReboundEntrance). [Read his article](http://anthony-skr.com/article/recyclerview-items-animation-with-rebound-effect)
 
 Implementation

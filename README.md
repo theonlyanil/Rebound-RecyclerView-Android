@@ -1,7 +1,7 @@
 Rebound-RecyclerView-Android
 ===
 
-Unofficial library based on Facebook's Rebound library for Android RecyclerView. Report issues in issues tab. Special Thanks to @anthony-skr
+Unofficial library based on Facebook's Rebound library for Android RecyclerView. Report issues in issues tab. Special Thanks to [@anthony-skr](https://github.com/anthony-skr/RecyclerViewReboundEntrance). [Read his article](http://anthony-skr.com/article/recyclerview-items-animation-with-rebound-effect)
 
 Implementation
 ===

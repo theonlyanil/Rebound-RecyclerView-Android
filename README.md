@@ -25,7 +25,6 @@ Usage
 ===
 
 Initialize in OnCreate
----
 
 ```java
     @Override
@@ -39,7 +38,6 @@ Initialize in OnCreate
 ```
 
 Go to Recycler Adapter and call ReboundRecycler in ```java onCreateViewHolder``` and ```java onBindViewHolder```
----
 
 ```java
       @Override

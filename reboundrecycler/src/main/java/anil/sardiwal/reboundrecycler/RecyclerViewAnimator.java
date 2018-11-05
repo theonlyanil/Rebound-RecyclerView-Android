@@ -39,6 +39,11 @@ public class RecyclerViewAnimator {
      */
     private static int SCROLL_FRICTION = 25;
 
+    /**
+     * Parameter to prevent animation from happening on the same row for more than once
+     */
+    private static boolean ANIMATE_ONLY_ONCE = false;
+
 
     private int mHeight;
     private RecyclerView mRecyclerView;
@@ -58,6 +63,7 @@ public class RecyclerViewAnimator {
         mStartDelay = INIT_DELAY;
     }
 
+
     public void onCreateViewHolder(View item) {
         /**
          * mFirstViewInit is used because we only want to show animation once at initialization.
@@ -73,15 +79,13 @@ public class RecyclerViewAnimator {
         /**
          * After init, animate once item by item when user scroll down.
          */
-        if (!mFirstViewInit)
-        {
-            if(position > mLastPosition)
-            {
+        if (!mFirstViewInit) {
+            if (position > mLastPosition) {
                 slideInBottom(item, 0, SCROLL_TENSION, SCROLL_FRICTION);
                 mLastPosition = position;
-            }
-            else
-            {
+            } else if (!ANIMATE_ONLY_ONCE) {
+                // if user decides not to animate item more than once than we stop changing mLastPosition value
+                // so that it can hold real last visible item position when someone scrolls up
                 slideInTop(item, 0, SCROLL_TENSION, SCROLL_FRICTION);
                 mLastPosition = position;
             }
@@ -187,5 +191,8 @@ public class RecyclerViewAnimator {
         SCROLL_FRICTION = scrollFriction;
     }
 
+    public static void setAnimateOnlyOnce() {
+        ANIMATE_ONLY_ONCE = true;
+    }
 
 }

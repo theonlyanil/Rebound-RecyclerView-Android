@@ -11,9 +11,8 @@ public class ReboundRecycler
     @SuppressLint("StaticFieldLeak")
     private static RecyclerViewAnimator recyclerViewAnimator;
 
-    public ReboundRecycler()
-    {
-
+    private ReboundRecycler() {
+        /*Private constructor will prevent instantiation of this class directly*/
     }
 
     public static synchronized ReboundRecycler init(RecyclerView recyclerView)
@@ -54,8 +53,18 @@ public class ReboundRecycler
     }
 
 
-    public static void first(ViewGroup layout)
-    {
+    /**
+     * Whether animation should happen only once per row - while scrolling
+     * default false
+     *
+     * @return instance of {@link ReboundRecycler}
+     */
+    public ReboundRecycler animateOnlyOnce() {
+        RecyclerViewAnimator.setAnimateOnlyOnce();
+        return this;
+    }
+
+    public static void first(ViewGroup layout) {
         recyclerViewAnimator.onCreateViewHolder(layout);
     }
 

@@ -38,7 +38,10 @@ public class RecyclerViewAnimator {
      * Scroll entrance animation friction parameter.
      */
     private static int SCROLL_FRICTION = 25;
-
+    /**
+     * Scroll again?
+     */
+    private static boolean SCROLL_AGAIN = true;
 
     private int mHeight;
     private RecyclerView mRecyclerView;
@@ -82,8 +85,11 @@ public class RecyclerViewAnimator {
             }
             else
             {
-                slideInTop(item, 0, SCROLL_TENSION, SCROLL_FRICTION);
-                mLastPosition = position;
+                if(SCROLL_AGAIN)
+                {
+                    slideInTop(item, 0, SCROLL_TENSION, SCROLL_FRICTION);
+                    mLastPosition = position;
+                }
             }
         }
     }
@@ -187,5 +193,9 @@ public class RecyclerViewAnimator {
         SCROLL_FRICTION = scrollFriction;
     }
 
+    public static void setScrollAgain(boolean scrollAgain)
+    {
+        SCROLL_AGAIN = scrollAgain;
+    }
 
 }

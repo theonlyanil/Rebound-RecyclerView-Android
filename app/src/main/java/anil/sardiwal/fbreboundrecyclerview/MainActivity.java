@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // init reboundrecycler
-        ReboundRecycler.init(recyclerView);
+        ReboundRecycler.init(recyclerView, false);
         recyclerView.setLayoutManager(layoutManager);
 
         // Fake data

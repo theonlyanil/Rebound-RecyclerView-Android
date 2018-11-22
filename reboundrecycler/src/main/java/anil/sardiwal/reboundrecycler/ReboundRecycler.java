@@ -16,11 +16,10 @@ public class ReboundRecycler
 
     }
 
-    public static synchronized ReboundRecycler init(RecyclerView recyclerView, boolean scrollAgain)
+    public static synchronized ReboundRecycler init(RecyclerView recyclerView)
     {
 
         recyclerViewAnimator = new RecyclerViewAnimator(recyclerView);
-        RecyclerViewAnimator.setScrollAgain(scrollAgain);
         return new ReboundRecycler();
     }
 
@@ -51,6 +50,12 @@ public class ReboundRecycler
     public ReboundRecycler scrollFriction(int scrollFriction)
     {
         RecyclerViewAnimator.setScrollFriction(scrollFriction);
+        return this;
+    }
+
+    public ReboundRecycler scrollAgain(boolean scrollAgain)
+    {
+        RecyclerViewAnimator.setScrollAgain(scrollAgain);
         return this;
     }
 

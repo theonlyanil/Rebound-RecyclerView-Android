@@ -19,7 +19,7 @@ build.gradle(Project)
 build.gradle (Module:app)
 ```gradle
 	dependencies {
-	        implementation 'com.github.theonlyanil:Rebound-RecyclerView-Android:0.2'
+	        implementation 'com.github.theonlyanil:Rebound-RecyclerView-Android:0.3'
 	}
 ```
 
@@ -36,11 +36,9 @@ Initialize in OnCreate
 
         RecyclerView recyclerView = findViewById(R.id.recyclerMain);
 
-	// Scrolling = Infinite
-        ReboundRecycler.init(recyclerView, true);
-	
-	// Scrolling = Once
-	ReboundRecycler.init(recyclerView, false);
+	// INIT
+        ReboundRecycler.init(recyclerView);
+
 ```
 
 Go to Recycler Adapter and call ReboundRecycler in ```java onCreateViewHolder``` and ```java onBindViewHolder```
@@ -69,6 +67,7 @@ You can also modify these values: Delay (animation start delay), Init Tension, I
 ```java
       ReboundRecycler.init(recyclerView, true)
           .delay(1000)                // loads after 1 second
+	  .scrollAgain(true)
           .initFriction(30)
           .initTension(250)
           .scrollFriction(25)
